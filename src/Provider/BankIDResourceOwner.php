@@ -40,7 +40,7 @@ class BankIDResourceOwner implements ResourceOwnerInterface
      */
     public function getFirstName()
     {
-        return $this->response['data']['firstName'];
+        return $this->response['data']['firstName'] ?? null;
     }
 
     /**
@@ -50,7 +50,7 @@ class BankIDResourceOwner implements ResourceOwnerInterface
      */
     public function getMiddleName()
     {
-        return $this->response['data']['middleName'];
+        return $this->response['data']['middleName'] ?? null;
     }
 
     /**
@@ -60,7 +60,7 @@ class BankIDResourceOwner implements ResourceOwnerInterface
      */
     public function getLastName()
     {
-        return $this->response['data']['lastName'];
+        return $this->response['data']['lastName'] ?? null;
     }
 
     /**
@@ -70,7 +70,7 @@ class BankIDResourceOwner implements ResourceOwnerInterface
      */
     public function getPhone()
     {
-        return $this->response['data']['phone'];
+        return $this->response['data']['phone'] ?? null;
     }
 
     /**
@@ -80,7 +80,7 @@ class BankIDResourceOwner implements ResourceOwnerInterface
      */
     public function getInn()
     {
-        return $this->response['data']['inn'];
+        return $this->response['data']['inn'] ?? null;
     }
 
     /**
@@ -90,7 +90,7 @@ class BankIDResourceOwner implements ResourceOwnerInterface
      */
     public function getBirthDay()
     {
-        return $this->response['data']['birthDay'];
+        return $this->response['data']['birthDay'] ?? null;
     }
 
     /**
@@ -100,7 +100,7 @@ class BankIDResourceOwner implements ResourceOwnerInterface
      */
     public function getSex()
     {
-        return $this->response['data']['sex'];
+        return $this->response['data']['sex'] ?? null;
     }
 
     /**
@@ -110,7 +110,7 @@ class BankIDResourceOwner implements ResourceOwnerInterface
      */
     public function getScans()
     {
-        return $this->response['data']['scans'];
+        return $this->response['data']['scans'] ?? [];
     }
 
     /**
@@ -120,7 +120,7 @@ class BankIDResourceOwner implements ResourceOwnerInterface
      */
     public function getAddresses()
     {
-        return $this->response['data']['addresses'];
+        return $this->response['data']['addresses'] ?? [];
     }
 
     /**
@@ -130,7 +130,7 @@ class BankIDResourceOwner implements ResourceOwnerInterface
      */
     public function getDocuments()
     {
-        return $this->response['data']['documents'];
+        return $this->response['data']['documents'] ?? [];
     }
 
     /**
