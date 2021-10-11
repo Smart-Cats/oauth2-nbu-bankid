@@ -235,6 +235,19 @@ class BankID extends AbstractProvider
     {
         $url = $this->getResourceOwnerDetailsUrl($token);
 
+        $body = [
+            'cert'      => base64_encode($this->getCert()),
+            'type'      => 'physical',
+            'fields'    => $this->getFields(),
+            'addresses' => $this->getAddresses(),
+            'documents' => $this->getDocuments(),
+            'scans'     => $this->getScans(),
+        ];
+
+        if (!$body['scans']) {
+            unset($body['scans']);
+        }
+
         $request = $this->getAuthenticatedRequest(
             self::METHOD_POST,
             $url,
@@ -243,16 +256,7 @@ class BankID extends AbstractProvider
                 'headers' => [
                     'Content-Type' => 'application/json',
                 ],
-                'body'    => json_encode(
-                    [
-                        'cert'      => base64_encode($this->getCert()),
-                        'type'      => 'physical',
-                        'fields'    => $this->getFields(),
-                        'addresses' => $this->getAddresses(),
-                        'documents' => $this->getDocuments(),
-                        'scans'     => $this->getScans(),
-                    ]
-                ),
+                'body'    => json_encode($body),
             ]
         );
 
